@@ -1,13 +1,17 @@
 import react from "react";
 import {Headers} from "./componentes/header/index"
-import { Productoslist } from "./componentes/productos/index"
 import 'boxicons';
+import { BrowserRouter as Router } from "react-router-dom";
+import {Paginas} from "./componentes/Paginas"
 
 function App() {
   return (
     <div className="App">
-      <Headers/>
-      <Productoslist/>
+      <Router>
+        <Headers/>
+
+        <Paginas/>
+      </Router>
     </div>
   );
 }
