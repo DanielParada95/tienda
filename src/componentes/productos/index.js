@@ -1,7 +1,13 @@
-import React from "react";
+import React, { useContext } from "react";
 import Img from "../images/Img1.PNG"
+import { DataContext } from "./coso/DataProvider.js";
 
 export const Productoslist = () =>{
+    const value = useContext(DataContext)
+    const [producto] = value.producto
+
+    console.log(producto)
+
     return (
         <>
         <h1 className="title">Productos</h1>

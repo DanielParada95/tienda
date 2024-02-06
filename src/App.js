@@ -3,9 +3,11 @@ import {Headers} from "./componentes/header/index"
 import 'boxicons';
 import { BrowserRouter as Router } from "react-router-dom";
 import {Paginas} from "./componentes/Paginas"
+import { DataProvider } from "./componentes/coso/DataProvider.js";
 
 function App() {
   return (
+    <DataProvider>
     <div className="App">
       <Router>
         <Headers/>
@@ -13,6 +15,7 @@ function App() {
         <Paginas/>
       </Router>
     </div>
+    </DataProvider>
   );
 }
 

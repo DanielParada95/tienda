@@ -92,6 +92,21 @@ header .Carro span{
   background-color: red;
 }
 
+/*------ inicio ------*/
+.inicio{
+  width: 100%;
+  margin: 0 auto;
+  padding-top: 9rem;
+}
+
+.inicio h1{
+  font-size: 2.5rem;
+  color: blue;
+}
+
+
+
+
 /*------ produc ------*/
 
 .title{
