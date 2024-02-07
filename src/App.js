@@ -2,7 +2,7 @@ import react from "react";
 import {Headers} from "./componentes/header/index"
 import 'boxicons';
 import { BrowserRouter as Router } from "react-router-dom";
-import {Paginas} from "./componentes/Paginas"
+import { Paginas } from "./componentes/Paginas.js";
 import { DataProvider } from "./componentes/coso/DataProvider.js";
 
 function App() {
