@@ -1,4 +1,7 @@
-import React from 'react'
+import React, { useContext } from 'react'
+import { DataContext } from '../coso/DataProvider';
+import { Link } from 'react-router-dom';
+
 
 export const Productosinventario = ({
     id,
@@ -7,12 +10,15 @@ export const Productosinventario = ({
     price
 }) => {
 
+    const value= useContext(DataContext)
+    const addCarro = value.addCarro
+    console.log(imagenUrl);
   return (
 
             <div className="productos">
             <a href="#">
                 <div className="productos-img">
-                    <img url={imagenUrl} alt={name}/>            
+                    <img src={imagenUrl} />         
                 </div>
             </a>
             <div className="producto__footer">
@@ -21,7 +27,7 @@ export const Productosinventario = ({
                 <p className="price">$ {price}</p>
             </div>
                 <div className="buttom">
-                    <button className="btn">Anadir al carrito</button>
+                    <button className="btn" onClick={()=> addCarro(id)}>Anadir al carrito</button>
                 </div>
             </div>
         

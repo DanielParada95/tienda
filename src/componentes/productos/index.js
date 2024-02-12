@@ -18,7 +18,7 @@ export const Productoslist = () =>{
                     key={producto.id}
                     id={producto.id}
                     name={producto.name}
-                    imagenUrl={producto.imagenUrl}
+                    imagenUrl={producto.imageUrl}
                     price={producto.price}
                     />
                 ))

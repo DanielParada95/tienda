@@ -1,7 +1,17 @@
-import React from "react";
+import React, {useContext} from "react";
 import { Link } from "react-router-dom";
+import { DataContext } from "../coso/DataProvider";
+
 
 export const Headers = () =>{
+    const value = useContext(DataContext)
+    const [menu, setMenu] = value.menu
+    const [carro, setCarro] = value.carro
+
+    const toogletrue= () =>{
+        setMenu(!menu)
+    }
+
     return (
         <header>
             <a>
@@ -17,9 +27,9 @@ export const Headers = () =>{
                     <Link to="/productos">Productos</Link>
                 </li>
             </ul>
-            <div className="Carro">
+            <div className="Carro" onClick={toogletrue}>
                 <box-icon name='cart-alt' type='solid' ></box-icon>
-                <span className="total_item">0</span>
+                <span className="total_item">{carro.length}</span>
             </div>
 
         </header>
