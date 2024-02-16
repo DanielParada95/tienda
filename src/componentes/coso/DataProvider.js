@@ -8,6 +8,7 @@ export const DataProvider= (props) =>{
     const [producto, setProducto] = useState([])
     const [menu, setMenu] = useState(false)
     const [carro, setCarro] = useState ([])
+    const [total, setTotal] = useState (0)
 
     useEffect(()=> {
         const producto = SHOE_DATA
@@ -41,16 +42,25 @@ export const DataProvider= (props) =>{
     }, [])
 
     useEffect(()=>{
-        localStorage.setItem('dataCarro', JSON.stringify(carro))
+        localStorage.getItem('dataCarro', JSON.stringify(carro))
     },[carro])
 
+    useEffect(()=> {
+        const getTotal = () =>{
+            const res = carro.reduce((prev, item) => {
+                return prev + (item.price * item.cantidad)
+            }, 0)
+            setTotal(res)
+        }
+        getTotal()
+    }, [carro])
 
     const value = {
         producto : [producto],
         menu: [menu,setMenu],
         addCarro: addCarro,
-        carro:[carro, setCarro]
-
+        carro:[carro, setCarro],
+        total: [total, setTotal]
     }
     
     return(
